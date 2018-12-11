@@ -9,6 +9,12 @@ export class DataBindingComponent implements OnInit {
 
   url = 'http://loiane.com';
 
+  getValor(){
+    return 2;
+  }
+
+  urlImagem = 'http://lorempixel.com/400/200/sports';
+
   constructor() { }
 
   ngOnInit() {

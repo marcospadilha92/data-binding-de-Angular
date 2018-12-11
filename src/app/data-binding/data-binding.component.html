@@ -3,6 +3,14 @@
     <article>
       <h3>Interpolation</h3>
       <p>O link falado é este {{ url }}</p>
+      <p>O resultado de 2x2 é {{ 2*2 }}</p>
+      <p>O resultado de 1+1 não é {{ 1 + 1 + getValor() }}</p>
+    </article>
+
+    <article>
+      <h3>Property Binding</h3>
+      <img src="{{ urlImagem }}">
+      <img [src]="urlImagem">
     </article>
 
 
