@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<section class="property-binding">
+<!-- <section class="property-binding"> -->
 
-    <article>
+    <!-- <article>
       <h3>Interpolation</h3>
       <p>O link falado é este {{ url }}</p>
       <p>O resultado de 2x2 é {{ 2*2 }}</p>
@@ -57,4 +57,68 @@
     </article>
 
 
+</section>
+
+<section class="event-binding">
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+        <button (click)="onClick()">Me Clique </button>
+
+        <br><br>
+
+        <input type="text"
+          (keyup)="onKeyup($event)"
+          (keyup.enter)="onSave(campo.value)"
+          (blur)="onSave(campo.value)"
+          #campo
+        > 
+
+
+        <div>Conteudo Atual: {{ conteudoAtual }}</div>
+        <div>Conteudo Salvo: {{  conteudoSalvo }}</div>
+
+        <br><br>
+
+        <span 
+        (mouseover)="onMouseSpan()"
+        (mouseout)="onMouseSpan()"
+        [class.highlight]="isMouseOver"
+        >
+          Passe o mouse sobre mim
+
+        </span>
+    </div>
+  </article> -->
+
+<!-- </section> -->
+
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+      <div>
+          <input type="text" 
+            [value] = "nome"
+            (input) = "nome = $event.target.value"
+          />
+
+            <input type="text" 
+            [ngModel] = "nome"
+            (ngModelChange) = "nome = $event"
+            />
+
+          <input type="text" [(ngModel)]="nome">
+
+
+          <p>Você digitou o nome {{ nome }}</p>
+      </div>
+
+      <p>Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos</p>
+      <div>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+      </div>
+
+        
+  </article>
 </section>
